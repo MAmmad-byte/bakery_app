@@ -1,65 +1,123 @@
 import Image from "next/image";
-
+import heroBG from "@/public/hero.jpg";
+import about from "@/public/about.jpg";
+import off from "@/public/off.jpg";
+import Container from "./_components/Container";
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="">
+      <section className="relative w-full min-h-screen flex items-center">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src={heroBG}
+          alt="heroBG"
+          placeholder="blur"
+          blurDataURL="/hero.jpg"
+          quality={70}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+          priority // <--- Crucial
+          fetchPriority="high"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        {/* <div> */}
+        <Container>
+          <h2 className="font-inter text-primary text-2xl">Delicious Cafe</h2>
+          <h1 className="text-7xl font-sansita_swashed">
+            Sweet Treats, <p>Perfect Eats</p>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          <div className="mt-15">
+            <Link href="#" className="py-2 px-4 bg-secondary rounded-lg">
+              Order Now
+            </Link>
+            <Link href="#" className="px-2 ml-2 text-primary">
+              Learn more
+            </Link>
+          </div>
+        </Container>
+        {/* </div> */}
+      </section>
+      <section className="relative w-full h-96 flex items-center mt-10">
+        <Image
+          src={about}
+          alt="heroBG"
+          placeholder="blur"
+          blurDataURL="/hero.jpg"
+          quality={100}
+          fill
+          style={{
+            objectFit: "fill",
+            zIndex: -1,
+          }}
+        />
+        {/* <div> */}
+        <Container>
+          <div className="text-center">
+            <div className=" max-w-100 mx-auto">
+              <h2 className="font-sansita_swashed text-white text-4xl">
+                About us
+              </h2>
+              <p className="text-xl font-extralight text-amber-50 font-inter mt-10">
+                Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel
+                bibendum lorem. Morbi convallis.
+              </p>
+              <div className="mt-5">
+                <Link href="#" className="py-2 px-4 bg-secondary rounded-lg">
+                  Read more
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Container>
+        {/* </div> */}
+      </section>
+
+      {/* off section  */}
+      <section className="relative w-full h-96 flex items-center mt-10">
+        <Image
+          src={off}
+          alt="heroBG"
+          placeholder="blur"
+          blurDataURL="/hero.jpg"
+          quality={100}
+          fill
+          style={{
+            objectFit: "fill",
+            zIndex: -1,
+          }}
+        />
+        {/* <div> */}
+        <Container>
+          <div className="text-center">
+            <div className=" max-w-92 mx-auto">
+              <h2 className="font-sansita_swashed text-secondary text-5xl">
+                20% Off Your First Order
+              </h2>
+              <p className="text-xl  text-gray-600 font-inter mt-5">
+                Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel
+                bibendum lorem. Morbi convallis.
+              </p>
+              <div className="mt-5">
+                <Link href="#" className="py-2 px-4 bg-secondary rounded-lg">
+                  Learn more
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Container>
+        {/* </div> */}
+      </section>
+      <section className=" w-full  flex items-center bg-white">
+        <Container>
+          <h2 className="font-sansita_swashed text-black font-semibold text-center text-4xl py-10 pt-20">
+            Top Products
+          </h2>
+        </Container>
+        {/* </div> */}
+      </section>
     </div>
   );
 }
