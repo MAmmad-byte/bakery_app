@@ -24,7 +24,7 @@ import exploreProduct6 from "@/public/exploreProduct6.png"
 export default function Home() {
   return (
     <div className="">
-      <section className="relative w-full min-h-screen flex items-center">
+      <section className="relative w-full min-h-screen flex ">
         <Image
           src={heroBG}
           alt="heroBG"
@@ -42,7 +42,24 @@ export default function Home() {
         />
         {/* <div> */}
         <Container>
-          <h2 className="font-inter text-primary text-2xl">Delicious Cafe</h2>
+          <nav className=" py-4 flex items-center">
+            <Image
+                  src={logo}
+                  alt="heroBG"
+                  placeholder="blur"
+                  blurDataURL="/hero.jpg"
+                  width={80}
+                />
+            <div>
+              <ul className="flex items-center justify-between text-xl text-white mt-2">
+                <li className="hover:text-primary ml-44">Home</li>
+                <li className="hover:text-primary ml-5">Blog</li>
+                <li className="hover:text-primary ml-5">Contact Us</li>
+                <li className="hover:text-primary ml-5">Services</li>
+              </ul>
+            </div>
+          </nav>
+          <h2 className="font-inter text-primary text-2xl mt-24">Delicious Cafe</h2>
           <h1 className="text-7xl font-sansita_swashed">
             Sweet Treats, <p>Perfect Eats</p>
           </h1>
